@@ -1023,10 +1023,11 @@ class="relative overflow-hidden">
 </section>
 <!-- 第六張 -->
 <div class="bg-white" x-data="topBtn">
-	<button @click="scrolltoTop" id="topButton" class="fixed z-10 hidden bottom-32 right-5 w-6">
+	<button @click="scrolltoTop" id="topButton" class="fixed z-10 hidden bottom-20 right-5 w-6">
 		<img src="./image/backtotop.png">
 	</button>
 </div>
+
 <script>
 	// * Story Swiper
 	var story = new Swiper("#story", {
@@ -1040,7 +1041,7 @@ class="relative overflow-hidden">
 		loop: true,
         navigation: {
           clickable: true,
-        },
+        }
     });
 	// * Team Swiper
 	var team = new Swiper("#team", {
@@ -1096,6 +1097,7 @@ class="relative overflow-hidden">
           },
         },
     });
+
 
     // * Back To Top
     document.addEventListener('alpine:init', () => {
