@@ -1,0 +1,1042 @@
+<!doctype html>
+<html>
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <link href="./css/index.css" rel="stylesheet">
+  <script src="https://cdn.tailwindcss.com"></script>
+  <link rel="stylesheet" href="https://unpkg.com/swiper@7/swiper-bundle.min.css" />
+  <link href="https://cdnjs.cloudflare.com/ajax/libs/animate.css/3.5.2/animate.min.css" rel="stylesheet"  />
+  <script src="https://unpkg.com/swiper@7/swiper-bundle.min.js"></script>
+  <script defer src="https://unpkg.com/alpinejs@3.2.3/dist/cdn.min.js"></script>
+  <title>Madmanga</title>
+  <script>
+    tailwind.config = {
+      theme: {
+        extend: {
+          colors: {
+            footerblue: '#13016C',
+          }
+      },
+      fontFamily: {
+        sans: ['Comfortaa'],
+        },
+      }
+    }
+  </script>
+  <style>
+  	.meteorities img{
+	    width: 50px;
+	    animation: meteorite 7s linear infinite;
+	}
+
+	.meteorities{
+	    width: 100%;
+	    display: flex;
+	    align-items: center;
+	    justify-content: space-around;
+	    position: absolute;
+	    top: 0px;
+	}
+
+	@keyframes meteorite{
+	  0% {
+	    	opacity: 0;
+	        transform: scale(0.5) translate3d(0, 0, 0);
+	        -webkit-transform: scale(0.5) translate3d(0, 0, 0);
+	        -moz-transform: scale(0.5) translate3d(0, 0, 0);
+	  }
+	  50% {
+	    	opacity: 1;
+	        transform: translate3d(-200px, 200px, 0);
+	        -webkit-transform: translate3d(-200px, 200px, 0);
+	        -moz-transform: translate3d(-200px, 200px, 0);
+	  }
+	  100% {
+	  		opacity: 0;
+	        transform: scale(1.2) translate3d(-300px, 300px, 0);
+	        -webkit-transform: scale(1.2) translate3d(-300px, 300px, 0);
+	        -moz-transform: scale(1.2) translate3d(-300px, 300px, 0);
+	  }
+	}
+
+	.meteorities img:nth-child(1){
+		z-index: 10;
+		opacity: 0;
+	    animation-delay: 2s;
+	    width: 150px;
+	}
+	.meteorities img:nth-child(2){
+		z-index: 10;
+		opacity: 0;
+	    animation-delay: 1s;
+	    width: 200px;
+	}
+	.meteorities img:nth-child(3){
+		z-index: 10;
+		opacity: 0;
+	    animation-delay: 3s;
+	    width: 180px;
+	}
+	.meteorities img:nth-child(4){
+		z-index: 10;
+		opacity: 0;
+	    animation-delay: 4.5s;
+	    width: 40px;
+	}
+	.meteorities img:nth-child(5){
+		z-index: 10;
+	    animation-delay: 3s;
+	    width: 20px;
+	}
+	.meteorities img:nth-child(6){
+		z-index: 10;
+	    animation-delay: 6s;
+	    width: 25px;
+	}
+	.meteorities img:nth-child(7){
+		z-index: 10;
+	    animation-delay: 7s;
+	}
+  </style>
+</head>
+<body 
+x-data="{ isOpen: false }">
+<!-- 導覽列 -->
+<section 
+:class="isOpen ? 'fixed top-0 z-50' : 'hidden'" 
+class="w-screen h-screen bg-footerblue  bg-opacity-70">
+	<div 
+	class="flex justify-center items-center h-screen">
+		<ul 
+		class="space-y-6">
+			<li 
+			class="text-white text-center text-xl font-thin hover:underline hover:underline-offset-4">
+				<a href="javascript:;" class="appearance-none">
+					<span class="text-2xl mr-2 font-bold">01</span>ITME NAME
+				</a>
+			</li>
+			<li 
+			class="text-white text-center text-xl font-thin hover:underline hover:underline-offset-4">
+				<a href="javascript:;" class="appearance-none">
+					<span class="text-2xl mr-2 font-bold">02</span>ITME NAME
+				</a>
+			<li 
+			class="text-white text-center text-xl font-thin hover:underline hover:underline-offset-4">
+				<a href="javascript:;" class="appearance-none">
+					<span class="text-2xl mr-2 font-bold">03</span>ITME NAME
+				</a>
+			</li>
+			<li 
+			class="text-white text-center text-xl font-thin hover:underline hover:underline-offset-4">
+				<a href="javascript:;" class="appearance-none">
+					<span class="text-2xl mr-2 font-bold">04</span>ITME NAME
+				</a>
+			</li>
+			<li 
+			class="flex justify-center items-center">
+				<button 
+				type="button" 
+				class="border-2 border-white px-14 py-2 text-white hover:bg-white hover:text-black duration-300">
+					BUTTON
+				</button>
+			</li>
+		</ul>
+	</div>
+	<!-- 選單 -->
+	<div 
+	class="absolute right-7 md:right-14 top-7 md:top-14 z-30">
+		<div 
+		class="border border-white p-2 h-14 w-14 flex justify-center items-center bg-footerblue">
+			<button 
+			type="button" 
+			@click="isOpen = false">
+				<svg xmlns="http://www.w3.org/2000/svg" class="h-8 w-8 text-white" fill="none" viewBox="0 0 24 24" stroke="currentColor">
+				  <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M6 18L18 6M6 6l12 12" />
+				</svg>
+			</button>
+		</div>
+	</div>
+	<!-- 選單 -->
+</section>
+<!-- 導覽列 -->
+<!-- 首頁 -->
+<section 
+class="relative w-screen h-screen bg-cover bg-center" 
+style="background-image: url(./image/banner-01.png);">
+	<div 
+	class="flex justify-end items-center h-screen flex-col">
+		<div>
+			<img 
+			src="./image/Logo-center.png" 
+			class="w-96 animated shake infinite">
+		</div>
+
+		<div 
+		class="mx-16">
+			<p 
+			class="text-white mt-20 pb-10 text-center text-sm">Build up your collection of NFT Heroes and explore the endless gaming metaverse of SIDU</p>
+
+			<div 
+			class="flex justify-center items-center space-x-4 pb-20">
+				<button 
+				type="button" 
+				class="border border-white px-16 md:px-24 py-2 rounded text-white hover:bg-white hover:text-black duration-300">
+				按鈕
+				</button>
+				<button 
+				type="button" 
+				class="border border-white px-16 md:px-24 py-2 rounded text-white hover:bg-white hover:text-black duration-300">
+				按鈕
+				</button>
+			</div>
+		</div>
+	</div>
+	<!-- 選單 -->
+	<div 
+	class="absolute right-7 md:right-14 top-7 md:top-14 z-30">
+		<div 
+		class="border border-white p-2 h-14 w-14 flex justify-center items-center">
+			<button 
+			type="button" 
+			@click="isOpen = true">
+				<svg xmlns="http://www.w3.org/2000/svg" class="h-8 w-8 text-white" fill="none" viewBox="0 0 24 24" stroke="currentColor">
+				  <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M4 6h16M4 12h16M4 18h16" />
+				</svg>
+			</button>
+		</div>
+	</div>
+	<!-- 選單 -->
+	<!-- 左側 -->
+	<div 
+	class="absolute left-7 md:left-14 bottom-7 md:bottom-14">
+		<div 
+		class="border border-white p-2 h-16 w-14">
+		</div>
+		<div>
+			<ul 
+			class="flex flex-col-reverse space-y-4 text-sm">
+				<li class="text-white py-4" style="writing-mode: vertical-lr;">TEAM</li>
+				<li class="text-white" style="writing-mode: vertical-lr;">ROAD MAP</li>
+				<li class="text-white" style="writing-mode: vertical-lr;">FOMO STONE</li>
+				<li class="text-white" style="writing-mode: vertical-lr;">STORY</li>
+				<li class="text-white" style="writing-mode: vertical-lr;">VIDEO</li>
+				<li class="text-white" style="writing-mode: vertical-lr;">HOME</li>
+			</ul>
+		</div>
+	</div>
+	<!-- 左側 -->
+	<div class="meteorities">
+	    <img src="./image/meteorite.png">
+	    <img src="./image/meteorite.png">
+	    <img src="./image/meteorite.png">
+	    <img src="./image/meteorite.png">
+<!-- 	    <img src="./image/meteorite.png">
+	    <img src="./image/meteorite.png">
+	    <img src="./image/meteorite.png"> -->
+	</div>
+</section>
+<!-- 首頁 -->
+
+<!-- 第二張 -->
+<section 
+class="relative w-screen h-screen bg-cover bg-center" 
+style="background-image: url(./image/banner-02.png);">
+	<div 
+      class="w-full h-full absolute top-0 left-0 z-10 overflow-hidden pointer-events-none mix-blend-screen">
+      <video class="absolute bottom-0 w-full" src="https://www.tsume-art.com/storage/app/media/ikigai/MHA/PARTICULES_LOOP_ENDEAVOR.mp4" autoplay="" playsinline="" webkit-playsinline="" muted="" loop="" style=""></video>
+    </div>
+	<!-- 選單 -->
+	<div 
+	class="absolute right-7 md:right-14 top-7 md:top-14">
+		<div 
+		class="border border-white p-2 h-14 w-14 flex justify-center items-center">
+			<button 
+			type="button" 
+			@click="isOpen = true">
+				<svg xmlns="http://www.w3.org/2000/svg" class="h-8 w-8 text-white" fill="none" viewBox="0 0 24 24" stroke="currentColor">
+				  <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M4 6h16M4 12h16M4 18h16" />
+				</svg>
+			</button>
+		</div>
+	</div>
+	<!-- 選單 -->
+	<!-- 左側 -->
+	<div 
+	class="absolute left-7 md:left-14 bottom-7 md:bottom-14">
+		<div 
+		class="border border-white p-2 h-16 w-14">
+		</div>
+		<div>
+			<ul 
+			class="flex flex-col-reverse space-y-4 text-sm">
+				<li class="text-white py-4" style="writing-mode: vertical-lr;">TEAM</li>
+				<li class="text-white" style="writing-mode: vertical-lr;">ROAD MAP</li>
+				<li class="text-white" style="writing-mode: vertical-lr;">FOMO STONE</li>
+				<li class="text-white" style="writing-mode: vertical-lr;">STORY</li>
+				<li class="text-white" style="writing-mode: vertical-lr;">VIDEO</li>
+				<li class="text-white" style="writing-mode: vertical-lr;">HOME</li>
+			</ul>
+		</div>
+	</div>
+	<!-- 左側 -->
+</section>
+<!-- 第二張 -->
+
+<!-- 第三張 -->
+<section 
+id="story" 
+class="swiper">
+	<div 
+	class="swiper-wrapper">
+		<div 
+		class="swiper-slide">
+			<section 
+			class="relative w-screen h-screen bg-cover bg-center" 
+			style="background-image: url(./image/story-03.png);">
+				<div 
+				class="container px-24 py-20 mx-auto opacity-100">
+			        <h1 
+			        class="text-3xl text-white">03 TITLE NAME</h1>
+			        
+			        <div 
+			        class="grid grid-cols-1 gap-0 md:gap-8 mt-12 md:grid-cols-2">
+			            <div 
+			            class="p-8 bg-gray-800 bg-opacity-40 h-68">
+			            	<p 
+			            	class="text-left text-white leading-8">Build up your collection of NFT Heroes and explore the endless gaming metaverse of SIDU Build up your collection of NFT Heroes and explore the endless gaming metaverse of SIDU</p>
+			            </div>
+
+			            <div 
+			            class="flex justify-end items-start flex-col h-48 md:h-60">
+			            	<h3 
+			            	class="text-2xl text-white pt-4">World collapse</h3>
+			            	<h3 
+			            	class="text-2xl text-white border-b-4 border-white py-4">doomsday scene</h3>
+			            </div>
+			        </div>
+			    </div>
+				<!-- 選單 -->
+				<div 
+				class="absolute right-7 md:right-14 top-7 md:top-14">
+					<div 
+					class="border border-white p-2 h-14 w-14 flex justify-center items-center">
+						<svg xmlns="http://www.w3.org/2000/svg" class="h-8 w-8 text-white" fill="none" viewBox="0 0 24 24" stroke="currentColor">
+						  <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M4 6h16M4 12h16M4 18h16" />
+						</svg>
+					</div>
+				</div>
+				<!-- 選單 -->
+				<!-- 左側 -->
+				<div 
+				class="absolute left-7 md:left-14 bottom-7 md:bottom-14">
+					<div 
+					class="border border-white p-2 h-16 w-14">
+					</div>
+					<div>
+						<ul 
+						class="flex flex-col-reverse space-y-4 text-sm">
+							<li class="text-white py-4" style="writing-mode: vertical-lr;">TEAM</li>
+							<li class="text-white" style="writing-mode: vertical-lr;">ROAD MAP</li>
+							<li class="text-white" style="writing-mode: vertical-lr;">FOMO STONE</li>
+							<li class="text-white" style="writing-mode: vertical-lr;">STORY</li>
+							<li class="text-white" style="writing-mode: vertical-lr;">VIDEO</li>
+							<li class="text-white" style="writing-mode: vertical-lr;">HOME</li>
+						</ul>
+					</div>
+				</div>
+				<!-- 左側 -->
+			</section>
+		</div>
+		<div 
+		class="swiper-slide">
+			<section 
+			class="relative w-screen h-screen bg-cover bg-center" 
+			style="background-image: url(./image/story-02.png);">
+				<div 
+				class="container px-24 py-20 mx-auto opacity-100">
+			        <h1 
+			        class="text-3xl text-white">02 TITLE NAME</h1>
+			        
+			        <div 
+			        class="grid grid-cols-1 gap-0 md:gap-8 mt-12 md:grid-cols-2">
+			            <div 
+			            class="flex justify-start items-end flex-col h-48 md:h-60">
+			            	<h3 
+			            	class="text-2xl text-white pt-4">World collapse</h3>
+			            	<h3 
+			            	class="text-2xl text-white border-b-4 border-white py-4">doomsday scene</h3>
+			            </div>
+			            <div 
+			            class="p-8 bg-gray-800 bg-opacity-40 h-68">
+			            	<p 
+			            	class="text-left text-white leading-8">Build up your collection of NFT Heroes and explore the endless gaming metaverse of SIDU Build up your collection of NFT Heroes and explore the endless gaming metaverse of SIDU</p>
+			            </div>
+			        </div>
+			    </div>
+				<!-- 選單 -->
+				<div 
+				class="absolute right-7 md:right-14 top-7 md:top-14">
+					<div 
+					class="border border-white p-2 h-14 w-14 flex justify-center items-center">
+						<button 
+						type="button" 
+						@click="isOpen = true">
+							<svg xmlns="http://www.w3.org/2000/svg" class="h-8 w-8 text-white" fill="none" viewBox="0 0 24 24" stroke="currentColor">
+							  <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M4 6h16M4 12h16M4 18h16" />
+							</svg>
+						</button>
+					</div>
+				</div>
+				<!-- 選單 -->
+				<!-- 左側 -->
+				<div 
+				class="absolute left-7 md:left-14 bottom-7 md:bottom-14">
+					<div 
+					class="border border-white p-2 h-16 w-14">
+					</div>
+					<div>
+						<ul 
+						class="flex flex-col-reverse space-y-4 text-sm">
+							<li class="text-white py-4" style="writing-mode: vertical-lr;">TEAM</li>
+							<li class="text-white" style="writing-mode: vertical-lr;">ROAD MAP</li>
+							<li class="text-white" style="writing-mode: vertical-lr;">FOMO STONE</li>
+							<li class="text-white" style="writing-mode: vertical-lr;">STORY</li>
+							<li class="text-white" style="writing-mode: vertical-lr;">VIDEO</li>
+							<li class="text-white" style="writing-mode: vertical-lr;">HOME</li>
+						</ul>
+					</div>
+				</div>
+				<!-- 左側 -->
+			</section>
+		</div>
+		<div 
+		class="swiper-slide">
+			<section  
+			class="relative w-screen h-screen bg-cover bg-center" 
+			style="background-image: url(./image/story-01.png);">
+				<div 
+				class="container px-24 py-20 mx-auto opacity-100">
+			        <h1 
+			        class="text-3xl text-white">01 TITLE NAME</h1>
+			        
+			        <div 
+			        class="grid grid-cols-1 gap-0 md:gap-8 mt-12 md:grid-cols-2">
+			            <div 
+			            class="p-8 bg-gray-800 bg-opacity-40 h-68">
+			            	<p 
+			            	class="text-left text-white leading-8">Build up your collection of NFT Heroes and explore the endless gaming metaverse of SIDU Build up your collection of NFT Heroes and explore the endless gaming metaverse of SIDU</p>
+			            </div>
+
+			            <div 
+			            class="flex justify-end items-start flex-col h-48 md:h-60">
+			            	<h3 
+			            	class="text-2xl text-white pt-4">World collapse</h3>
+			            	<h3 
+			            	class="text-2xl text-white border-b-4 border-white py-4">doomsday scene</h3>
+			            </div>
+			        </div>
+			    </div>
+				<!-- 選單 -->
+				<div 
+				class="absolute right-7 md:right-14 top-7 md:top-14">
+					<div 
+					class="border border-white p-2 h-14 w-14 flex justify-center items-center">
+						<button 
+						type="button" 
+						@click="isOpen = true">
+							<svg xmlns="http://www.w3.org/2000/svg" class="h-8 w-8 text-white" fill="none" viewBox="0 0 24 24" stroke="currentColor">
+							  <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M4 6h16M4 12h16M4 18h16" />
+							</svg>
+						</button>
+					</div>
+				</div>
+				<!-- 選單 -->
+				<!-- 左側 -->
+				<div 
+				class="absolute left-7 md:left-14 bottom-7 md:bottom-14">
+					<div 
+					class="border border-white p-2 h-16 w-14">
+					</div>
+					<div>
+						<ul 
+						class="flex flex-col-reverse space-y-4 text-sm">
+							<li class="text-white py-4" style="writing-mode: vertical-lr;">TEAM</li>
+							<li class="text-white" style="writing-mode: vertical-lr;">ROAD MAP</li>
+							<li class="text-white" style="writing-mode: vertical-lr;">FOMO STONE</li>
+							<li class="text-white" style="writing-mode: vertical-lr;">STORY</li>
+							<li class="text-white" style="writing-mode: vertical-lr;">VIDEO</li>
+							<li class="text-white" style="writing-mode: vertical-lr;">HOME</li>
+						</ul>
+					</div>
+				</div>
+				<!-- 左側 -->
+			</section>
+		</div>
+	</div>
+</section>
+<!-- 第三張 -->
+
+<!-- 第四張 -->
+<section 
+class="relative w-screen h-screen bg-cover bg-center" 
+style="background-image: url(./image/banner-04.png);">
+	<div 
+	class="flex justify-start items-center flex-col py-12">
+		<p 
+		class="text-white text-sm">TEAM</p>
+	</div>
+	<div 
+	class="max-w-3xl md:max-w-5xl mx-20 md:mx-auto">
+		<div 
+		id="team" 
+		class="swiper swiperx team px-4">
+	      <div class="swiper-wrapper">
+	        <div class="swiper-slide">
+	        	<div class="">
+	        		<div 
+	        		class="flex-col justify-start items-center text-white">
+	        			<h4 
+	        			class="text-xl border-b-2 border-white w-5">01</h4>
+	        			<h4 
+	        			class="py-2">MEMBER NAME</h4>
+	        		</div>
+	        		<picture>
+	        			<img src="./image/team-01.png" class="md:h-auto">
+	        		</picture>
+	        		<div 
+	        		class="border border-white p-2 text-white text-center my-2">
+	        			ITME
+	        		</div>
+	        	</div>
+	        </div>
+	        <div class="swiper-slide">
+	        	<div class="">
+	        		<div 
+	        		class="flex-col justify-start items-center text-white">
+	        			<h4 
+	        			class="text-xl border-b-2 border-white w-5">02</h4>
+	        			<h4 
+	        			class="py-2">MEMBER NAME</h4>
+	        		</div>
+	        		<picture>
+	        			<img src="./image/team-02.png" class="md:h-auto">
+	        		</picture>
+	        		<div 
+	        		class="border border-white p-2 text-white text-center my-2">
+	        			ITME
+	        		</div>
+	        	</div>
+	        </div>
+	        <div class="swiper-slide">
+	        	<div class="">
+	        		<div 
+	        		class="flex-col justify-start items-center text-white">
+	        			<h4 
+	        			class="text-xl border-b-2 border-white w-5">03</h4>
+	        			<h4 
+	        			class="py-2">MEMBER NAME</h4>
+	        		</div>
+	        		<picture>
+	        			<img src="./image/team-03.png" class="md:h-auto">
+	        		</picture>
+	        		<div 
+	        		class="border border-white p-2 text-white text-center my-2">
+	        			ITME
+	        		</div>
+	        	</div>
+	        </div>
+	        <div class="swiper-slide">
+	        	<div class="">
+	        		<div 
+	        		class="flex-col justify-start items-center text-white">
+	        			<h4 
+	        			class="text-xl border-b-2 border-white w-5">04</h4>
+	        			<h4 
+	        			class="py-2">MEMBER NAME</h4>
+	        		</div>
+	        		<picture>
+	        			<img src="./image/team-04.png" class="md:h-auto">
+	        		</picture>
+	        		<div 
+	        		class="border border-white p-2 text-white text-center my-2">
+	        			ITME
+	        		</div>
+	        	</div>
+	        </div>
+	        <div class="swiper-slide">
+	        	<div class="">
+	        		<div 
+	        		class="flex-col justify-start items-center text-white">
+	        			<h4 
+	        			class="text-xl border-b-2 border-white w-5">05</h4>
+	        			<h4 
+	        			class="py-2">MEMBER NAME</h4>
+	        		</div>
+	        		<picture>
+	        			<img src="./image/team-05.png" class="md:h-auto">
+	        		</picture>
+	        		<div 
+	        		class="border border-white p-2 text-white text-center my-2">
+	        			ITME
+	        		</div>
+	        	</div>
+	        </div>
+	        <div class="swiper-slide">
+	        	<div class="">
+	        		<div 
+	        		class="flex-col justify-start items-center text-white">
+	        			<h4 
+	        			class="text-xl border-b-2 border-white w-5">06</h4>
+	        			<h4 
+	        			class="py-2">MEMBER NAME</h4>
+	        		</div>
+	        		<picture>
+	        			<img src="./image/team-06.png" class="md:h-auto">
+	        		</picture>
+	        		<div 
+	        		class="border border-white p-2 text-white text-center my-2">
+	        			ITME
+	        		</div>
+	        	</div>
+	        </div>
+	        <div class="swiper-slide">
+	        	<div class="">
+	        		<div 
+	        		class="flex-col justify-start items-center text-white">
+	        			<h4 
+	        			class="text-xl border-b-2 border-white w-5">01</h4>
+	        			<h4 
+	        			class="py-2">MEMBER NAME</h4>
+	        		</div>
+	        		<picture>
+	        			<img src="./image/team-01.png" class="md:h-auto">
+	        		</picture>
+	        		<div 
+	        		class="border border-white p-2 text-white text-center my-2">
+	        			ITME
+	        		</div>
+	        	</div>
+	        </div>
+	      </div>
+	    </div>
+
+	    <div 
+		id="team2" 
+		class="swiper swiperx team px-4">
+	      <div class="swiper-wrapper">
+	        <div class="swiper-slide">
+	        	<div class="">
+	        		<div 
+	        		class="flex-col justify-start items-center text-white">
+	        			<h4 
+	        			class="text-xl border-b-2 border-white w-5">07</h4>
+	        			<h4 
+	        			class="py-2">MEMBER NAME</h4>
+	        		</div>
+	        		<picture>
+	        			<img src="./image/team-08.png" class="md:h-auto">
+	        		</picture>
+	        		<div 
+	        		class="border border-white p-2 text-white text-center my-2">
+	        			ITME
+	        		</div>
+	        	</div>
+	        </div>
+	        <div class="swiper-slide">
+	        	<div class="">
+	        		<div 
+	        		class="flex-col justify-start items-center text-white">
+	        			<h4 
+	        			class="text-xl border-b-2 border-white w-5">08</h4>
+	        			<h4 
+	        			class="py-2">MEMBER NAME</h4>
+	        		</div>
+	        		<picture>
+	        			<img src="./image/team-07.png" class="md:h-auto">
+	        		</picture>
+	        		<div 
+	        		class="border border-white p-2 text-white text-center my-2">
+	        			ITME
+	        		</div>
+	        	</div>
+	        </div>
+	        <div class="swiper-slide">
+	        	<div class="">
+	        		<div 
+	        		class="flex-col justify-start items-center text-white">
+	        			<h4 
+	        			class="text-xl border-b-2 border-white w-5">07</h4>
+	        			<h4 
+	        			class="py-2">MEMBER NAME</h4>
+	        		</div>
+	        		<picture>
+	        			<img src="./image/team-06.png" class="md:h-auto">
+	        		</picture>
+	        		<div 
+	        		class="border border-white p-2 text-white text-center my-2">
+	        			ITME
+	        		</div>
+	        	</div>
+	        </div>
+	        <div class="swiper-slide">
+	        	<div class="">
+	        		<div 
+	        		class="flex-col justify-start items-center text-white">
+	        			<h4 
+	        			class="text-xl border-b-2 border-white w-5">06</h4>
+	        			<h4 
+	        			class="py-2">MEMBER NAME</h4>
+	        		</div>
+	        		<picture>
+	        			<img src="./image/team-05.png" class="md:h-auto">
+	        		</picture>
+	        		<div 
+	        		class="border border-white p-2 text-white text-center my-2">
+	        			ITME
+	        		</div>
+	        	</div>
+	        </div>
+	        <div class="swiper-slide">
+	        	<div class="">
+	        		<div 
+	        		class="flex-col justify-start items-center text-white">
+	        			<h4 
+	        			class="text-xl border-b-2 border-white w-5">05</h4>
+	        			<h4 
+	        			class="py-2">MEMBER NAME</h4>
+	        		</div>
+	        		<picture>
+	        			<img src="./image/team-05.png" class="md:h-auto">
+	        		</picture>
+	        		<div 
+	        		class="border border-white p-2 text-white text-center my-2">
+	        			ITME
+	        		</div>
+	        	</div>
+	        </div>
+	        <div class="swiper-slide">
+	        	<div class="">
+	        		<div 
+	        		class="flex-col justify-start items-center text-white">
+	        			<h4 
+	        			class="text-xl border-b-2 border-white w-5">04</h4>
+	        			<h4 
+	        			class="py-2">MEMBER NAME</h4>
+	        		</div>
+	        		<picture>
+	        			<img src="./image/team-04.png" class="md:h-auto">
+	        		</picture>
+	        		<div 
+	        		class="border border-white p-2 text-white text-center my-2">
+	        			ITME
+	        		</div>
+	        	</div>
+	        </div>
+	        <div class="swiper-slide">
+	        	<div class="">
+	        		<div 
+	        		class="flex-col justify-start items-center text-white">
+	        			<h4 
+	        			class="text-xl border-b-2 border-white w-5">03</h4>
+	        			<h4 
+	        			class="py-2">MEMBER NAME</h4>
+	        		</div>
+	        		<picture>
+	        			<img src="./image/team-03.png" class="md:h-auto">
+	        		</picture>
+	        		<div 
+	        		class="border border-white p-2 text-white text-center my-2">
+	        			ITME
+	        		</div>
+	        	</div>
+	        </div>
+	      </div>
+	    </div>
+
+	</div>
+
+	<!-- 選單 -->
+	<div 
+	class="absolute right-7 md:right-14 top-7 md:top-14">
+		<div 
+		class="border border-white p-2 h-14 w-14 flex justify-center items-center">
+			<button 
+			type="button" 
+			@click="isOpen = true">
+				<svg xmlns="http://www.w3.org/2000/svg" class="h-8 w-8 text-white" fill="none" viewBox="0 0 24 24" stroke="currentColor">
+				  <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M4 6h16M4 12h16M4 18h16" />
+				</svg>
+			</button>
+		</div>
+	</div>
+	<!-- 選單 -->
+	<!-- 左側 -->
+	<div 
+	class="absolute left-7 md:left-14 bottom-7 md:bottom-14">
+		<div 
+		class="border border-white p-2 h-16 w-14">
+		</div>
+		<div>
+			<ul 
+			class="flex flex-col-reverse space-y-4 text-sm">
+				<li class="text-white py-4" style="writing-mode: vertical-lr;">TEAM</li>
+				<li class="text-white" style="writing-mode: vertical-lr;">ROAD MAP</li>
+				<li class="text-white" style="writing-mode: vertical-lr;">FOMO STONE</li>
+				<li class="text-white" style="writing-mode: vertical-lr;">STORY</li>
+				<li class="text-white" style="writing-mode: vertical-lr;">VIDEO</li>
+				<li class="text-white" style="writing-mode: vertical-lr;">HOME</li>
+			</ul>
+		</div>
+	</div>
+	<!-- 左側 -->
+</section>
+<!-- 第四張 -->
+
+<!-- 第五張 -->
+<section 
+class="relative w-screen h-screen bg-cover bg-center" 
+style="background-image: url(./image/banner-05.png);">
+	<div 
+	class="flex justify-start items-center flex-col py-12">
+		<p 
+		class="text-white text-sm">BRANDS WE’VE WORKED WITH</p>
+	</div>
+	<div 
+	class="max-w-2xl mx-20 md:mx-auto grid grid-cols-2 md:grid-cols-6 gap-20 space-y-2 md:space-y-12 place-content-center">
+		<img src="./image/t-01.png" class="col-span-1 md:col-span-2 opacity-40 hover:opacity-100">
+		<img src="./image/t-02.png" class="col-span-1 md:col-span-2 opacity-40 hover:opacity-100">
+		<img src="./image/t-03.png" class="col-span-1 md:col-span-2 opacity-40 hover:opacity-100">
+		<img src="./image/t-04.png" class="col-span-1 md:col-span-3 opacity-40 hover:opacity-100">
+		<img src="./image/t-05.png" class="col-span-1 md:col-span-3 opacity-40 hover:opacity-100">
+		<img src="./image/t-06.png" class="col-span-1 md:col-span-2 opacity-40 hover:opacity-100">
+		<img src="./image/t-07.png" class="col-span-1 md:col-span-2 opacity-40 hover:opacity-100">
+		<img src="./image/t-08.png" class="col-span-1 md:col-span-2 opacity-40 hover:opacity-100">
+
+	</div>
+	<!-- 選單 -->
+	<div 
+	class="absolute right-7 md:right-14 top-7 md:top-14">
+		<div 
+		class="border border-white p-2 h-14 w-14 flex justify-center items-center">
+			<button 
+			type="button" 
+			@click="isOpen = true">
+				<svg xmlns="http://www.w3.org/2000/svg" class="h-8 w-8 text-white" fill="none" viewBox="0 0 24 24" stroke="currentColor">
+				  <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M4 6h16M4 12h16M4 18h16" />
+				</svg>
+			</button>
+		</div>
+	</div>
+	<!-- 選單 -->
+	<!-- 左側 -->
+	<div 
+	class="absolute left-7 md:left-14 bottom-7 md:bottom-14">
+		<div>
+			<ul 
+			class="flex flex-col-reverse space-y-4 text-sm">
+				<li class="text-white py-4" style="writing-mode: vertical-lr;">TEAM</li>
+				<li class="text-white" style="writing-mode: vertical-lr;">ROAD MAP</li>
+				<li class="text-white" style="writing-mode: vertical-lr;">FOMO STONE</li>
+				<li class="text-white" style="writing-mode: vertical-lr;">STORY</li>
+				<li class="text-white" style="writing-mode: vertical-lr;">VIDEO</li>
+				<li class="text-white" style="writing-mode: vertical-lr;">HOME</li>
+			</ul>
+		</div>
+		<div 
+		class="border border-white p-2 h-16 w-14">
+		</div>
+	</div>
+	<!-- 左側 -->
+</section>
+<!-- 第五張 -->
+
+<!-- 第六張 -->
+<section 
+class="relative overflow-hidden">
+	<div class="bg-footerblue">
+	   	<div class="max-w-6xl m-auto text-white flex flex-wrap justify-start">
+	    	<div class="p-5 w-full md:w-1/6 flex  flex-col justify-center items-center">
+		        <ul class="space-y-2">
+		        	<li 
+		        	class="text-md text-white font-medium py-4">02 TITLE NAME</li>
+		        	<li class="text-center md:text-left">NANOPASS</li>
+		         	<li class="text-center md:text-left">NANOPASS</li>
+		         	<li class="text-center md:text-left">NANOPASS</li>
+		         	<li class="text-center md:text-left">NANOPASS</li>
+		         	<li class="text-center md:text-left">NANOPASS</li>
+		         	<li class="text-center md:text-left">NANOPASS</li>
+		        </ul>
+	      	</div>
+	      	<div class="p-5 w-full md:w-1/6 flex  flex-col justify-center items-center">
+		        <ul class="space-y-2">
+		        	<li 
+		        	class="text-md text-white font-medium py-4">02 TITLE NAME</li>
+		        	<li class="text-center md:text-left">NANOPASS</li>
+		         	<li class="text-center md:text-left">NANOPASS</li>
+		         	<li class="text-center md:text-left">NANOPASS</li>
+		         	<li class="text-center md:text-left">NANOPASS</li>
+		         	<li class="text-center md:text-left">NANOPASS</li>
+		         	<li class="text-center md:text-left">NANOPASS</li>
+		        </ul>
+	      	</div>
+	      	<div class="p-5 w-full md:w-4/6 flex flex-row space-x-4 justify-center items-center md:items-start mt-12">
+		        <a href="/#" class="mx-2">
+		            <svg class="fill-current cursor-pointer text-white hover:text-gray-400" width="48px" height="48px" viewBox="0 0 24 24" version="1.1" xmlns="http://www.w3.org/2000/svg" xmlns:xlink="http://www.w3.org/1999/xlink" xml:space="preserve" xmlns:serif="http://www.serif.com/" style="fill-rule: evenodd; clip-rule: evenodd; stroke-linejoin: round; stroke-miterlimit: 2;">
+		               <path id="Twitter" d="M24,12c0,6.627 -5.373,12 -12,12c-6.627,0 -12,-5.373 -12,-12c0,-6.627
+		                  5.373,-12 12,-12c6.627,0 12,5.373 12,12Zm-6.465,-3.192c-0.379,0.168
+		                  -0.786,0.281 -1.213,0.333c0.436,-0.262 0.771,-0.676
+		                  0.929,-1.169c-0.408,0.242 -0.86,0.418 -1.341,0.513c-0.385,-0.411
+		                  -0.934,-0.667 -1.541,-0.667c-1.167,0 -2.112,0.945 -2.112,2.111c0,0.166
+		                  0.018,0.327 0.054,0.482c-1.754,-0.088 -3.31,-0.929
+		                  -4.352,-2.206c-0.181,0.311 -0.286,0.674 -0.286,1.061c0,0.733 0.373,1.379
+		                  0.94,1.757c-0.346,-0.01 -0.672,-0.106 -0.956,-0.264c-0.001,0.009
+		                  -0.001,0.018 -0.001,0.027c0,1.023 0.728,1.877 1.694,2.07c-0.177,0.049
+		                  -0.364,0.075 -0.556,0.075c-0.137,0 -0.269,-0.014 -0.397,-0.038c0.268,0.838
+		                  1.048,1.449 1.972,1.466c-0.723,0.566 -1.633,0.904 -2.622,0.904c-0.171,0
+		                  -0.339,-0.01 -0.504,-0.03c0.934,0.599 2.044,0.949 3.237,0.949c3.883,0
+		                  6.007,-3.217 6.007,-6.008c0,-0.091 -0.002,-0.183 -0.006,-0.273c0.413,-0.298
+		                  0.771,-0.67 1.054,-1.093Z"></path>
+		            </svg>
+		         </a>
+		         <a href="/#" class="">
+		            <svg class="fill-current cursor-pointer text-white hover:text-gray-400" width="48px" height="48px" viewBox="0 0 24 24" version="1.1" xmlns="http://www.w3.org/2000/svg" xmlns:xlink="http://www.w3.org/1999/xlink" xml:space="preserve" xmlns:serif="http://www.serif.com/" style="fill-rule: evenodd; clip-rule: evenodd; stroke-linejoin: round; stroke-miterlimit: 2;">
+		               <path id="Twitter" d="M24,12c0,6.627 -5.373,12 -12,12c-6.627,0 -12,-5.373 -12,-12c0,-6.627
+		                  5.373,-12 12,-12c6.627,0 12,5.373 12,12Zm-6.465,-3.192c-0.379,0.168
+		                  -0.786,0.281 -1.213,0.333c0.436,-0.262 0.771,-0.676
+		                  0.929,-1.169c-0.408,0.242 -0.86,0.418 -1.341,0.513c-0.385,-0.411
+		                  -0.934,-0.667 -1.541,-0.667c-1.167,0 -2.112,0.945 -2.112,2.111c0,0.166
+		                  0.018,0.327 0.054,0.482c-1.754,-0.088 -3.31,-0.929
+		                  -4.352,-2.206c-0.181,0.311 -0.286,0.674 -0.286,1.061c0,0.733 0.373,1.379
+		                  0.94,1.757c-0.346,-0.01 -0.672,-0.106 -0.956,-0.264c-0.001,0.009
+		                  -0.001,0.018 -0.001,0.027c0,1.023 0.728,1.877 1.694,2.07c-0.177,0.049
+		                  -0.364,0.075 -0.556,0.075c-0.137,0 -0.269,-0.014 -0.397,-0.038c0.268,0.838
+		                  1.048,1.449 1.972,1.466c-0.723,0.566 -1.633,0.904 -2.622,0.904c-0.171,0
+		                  -0.339,-0.01 -0.504,-0.03c0.934,0.599 2.044,0.949 3.237,0.949c3.883,0
+		                  6.007,-3.217 6.007,-6.008c0,-0.091 -0.002,-0.183 -0.006,-0.273c0.413,-0.298
+		                  0.771,-0.67 1.054,-1.093Z"></path>
+		            </svg>
+		         </a>
+		         <a href="/#" class="pl-2">
+		            <svg class="fill-current cursor-pointer text-white hover:text-gray-400" width="48px" height="48px" viewBox="0 0 24 24" version="1.1" xmlns="http://www.w3.org/2000/svg" xmlns:xlink="http://www.w3.org/1999/xlink" xml:space="preserve" xmlns:serif="http://www.serif.com/" style="fill-rule: evenodd; clip-rule: evenodd; stroke-linejoin: round; stroke-miterlimit: 2;">
+		               <path id="Twitter" d="M24,12c0,6.627 -5.373,12 -12,12c-6.627,0 -12,-5.373 -12,-12c0,-6.627
+		                  5.373,-12 12,-12c6.627,0 12,5.373 12,12Zm-6.465,-3.192c-0.379,0.168
+		                  -0.786,0.281 -1.213,0.333c0.436,-0.262 0.771,-0.676
+		                  0.929,-1.169c-0.408,0.242 -0.86,0.418 -1.341,0.513c-0.385,-0.411
+		                  -0.934,-0.667 -1.541,-0.667c-1.167,0 -2.112,0.945 -2.112,2.111c0,0.166
+		                  0.018,0.327 0.054,0.482c-1.754,-0.088 -3.31,-0.929
+		                  -4.352,-2.206c-0.181,0.311 -0.286,0.674 -0.286,1.061c0,0.733 0.373,1.379
+		                  0.94,1.757c-0.346,-0.01 -0.672,-0.106 -0.956,-0.264c-0.001,0.009
+		                  -0.001,0.018 -0.001,0.027c0,1.023 0.728,1.877 1.694,2.07c-0.177,0.049
+		                  -0.364,0.075 -0.556,0.075c-0.137,0 -0.269,-0.014 -0.397,-0.038c0.268,0.838
+		                  1.048,1.449 1.972,1.466c-0.723,0.566 -1.633,0.904 -2.622,0.904c-0.171,0
+		                  -0.339,-0.01 -0.504,-0.03c0.934,0.599 2.044,0.949 3.237,0.949c3.883,0
+		                  6.007,-3.217 6.007,-6.008c0,-0.091 -0.002,-0.183 -0.006,-0.273c0.413,-0.298
+		                  0.771,-0.67 1.054,-1.093Z"></path>
+		            </svg>
+		         </a>
+	      	</div>
+	   	</div>
+	</div>
+
+	<div class="bg-footerblue pt-2">
+	   <div class="flex pb-5 px-3 mx-auto pt-5 text-white text-sm flex-col
+	      md:flex-row max-w-6xl items-center md:justify-between space-y-4">
+	      <div 
+	      class="">
+	      	Mail. info@madmanga.com
+	      </div>
+	      <div 
+	      class="">
+	      	1-15-43 chueajmer, fake message
+	      </div>
+	      <div class="">
+	         Copyright Mad Manga all rights reserved 2021
+	      </div>
+	   </div>
+	</div>
+
+	<div 
+	class="absolute -bottom-10 right-0 opacity-10">
+		<img src="./image/Logo-center.png">
+	</div>
+</section>
+<!-- 第六張 -->
+<div class="swiper mySwiper">
+      <div class="swiper-wrapper">
+        <div class="swiper-slide">Slide 1</div>
+        <div class="swiper-slide">Slide 2</div>
+        <div class="swiper-slide">Slide 3</div>
+        <div class="swiper-slide">Slide 4</div>
+        <div class="swiper-slide">Slide 5</div>
+        <div class="swiper-slide">Slide 6</div>
+        <div class="swiper-slide">Slide 7</div>
+        <div class="swiper-slide">Slide 8</div>
+        <div class="swiper-slide">Slide 9</div>
+      </div>
+      <div class="swiper-pagination"></div>
+    </div>
+<script>
+	// * Story Swiper
+	var story = new Swiper("#story", {
+		direction: "vertical",
+		mousewheel: true,
+		slidesPerView: 1,
+		autoplay: {
+          delay: 5000,
+          disableOnInteraction: false,
+        },
+		loop: true,
+        navigation: {
+          clickable: true,
+        },
+    });
+	// * Team Swiper
+	var team = new Swiper("#team", {
+        slidesPerView: 2,
+        spaceBetween: 10,
+        pagination: {
+          el: ".swiper-pagination",
+          clickable: true,
+        },
+        breakpoints: {
+          640: {
+            slidesPerView: 2,
+            spaceBetween: 10,
+          },
+          768: {
+            slidesPerView: 4,
+            spaceBetween: 10,
+          },
+          1024: {
+            slidesPerView: 6,
+            spaceBetween: 10,
+          },
+        },
+    });
+
+	var team2 = new Swiper("#team2", {
+        slidesPerView: 2,
+        spaceBetween: 10,
+        pagination: {
+          el: ".swiper-pagination",
+          clickable: true,
+        },
+        breakpoints: {
+          640: {
+            slidesPerView: 2,
+            spaceBetween: 10,
+          },
+          768: {
+            slidesPerView: 4,
+            spaceBetween: 10,
+          },
+          1024: {
+            slidesPerView: 6,
+            spaceBetween: 10,
+          },
+        },
+    });
+</script>
+</body>
+</html>
